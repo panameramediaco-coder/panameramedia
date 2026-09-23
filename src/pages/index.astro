@@ -9,35 +9,33 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:-apple-system,Inter,Helvetica;background:#fff;color:#0a0a0a}
   .breaking{background:#0a0a0a;color:#fff;text-align:center;padding:8px 16px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-  .breaking span{color:#FF2E93}
   header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1.5px solid #0a0a0a}
   .topbar{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
   .logo{font-weight:900;letter-spacing:-1.5px;font-size:20px}
   .container{max-width:1280px;margin:0 auto;padding:0 24px}
   .hero{display:grid;grid-template-columns:1.3fr 0.7fr;gap:20px;padding:28px 0}
-  .video{border:1.5px solid #0a0a0a;border-radius:16px;aspect-ratio:16/9;background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none}
-  .video-inner{text-align:center}
-  .video-inner div{font-size:11px;letter-spacing:2px;opacity:0.5;margin-bottom:8px}
-  .video-inner h3{font-size:18px;font-weight:900}
+  .video{border:1.5px solid #0a0a0a;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#0a0a0a}
+  .video iframe{width:100%;height:100%;border:0}
   .hero-text{border:1.5px solid #0a0a0a;border-radius:16px;padding:28px;display:flex;flex-direction:column;justify-content:center}
   .eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:0.5;margin-bottom:12px}
-  .hero-text h1{font-size:48px;font-weight:900;letter-spacing:-2px;line-height:0.9}
+  .hero-text h1{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:0.9}
   .hero-text h1 .pink{color:#FF2E93} .hero-text h1 .blue{color:#38B6FF} .hero-text h1 .yellow{color:#FFD60A}
   .hero-text p{margin-top:14px;font-size:14px;opacity:0.6;line-height:1.5}
   .btns{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
   .btn{padding:13px 20px;border-radius:100px;font-weight:800;font-size:12px;text-decoration:none;border:1.5px solid #0a0a0a;display:inline-flex}
   .btn-black{background:#0a0a0a;color:#fff} .btn-white{background:#fff;color:#0a0a0a}
-  .cards{display:flex;flex-direction:column;gap:12px}
+  .cards{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   .card{border:1.5px solid #0a0a0a;border-radius:14px;padding:16px;background:#fff}
   .card h4{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;opacity:0.5;margin-bottom:8px}
   .card a{font-weight:800;text-decoration:none;color:#0a0a0a;font-size:13px;display:flex;justify-content:space-between}
+  .section{padding:32px 0;border-top:1.5px solid #0a0a0a} .section h2{font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:18px}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .story{border:1.5px solid #0a0a0a;border-radius:14px;overflow:hidden;text-decoration:none;color:#0a0a0a;background:#fff}
   .thumb{aspect-ratio:16/9;background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px}
   .body{padding:14px} .body h4{font-size:14px;font-weight:800} .body p{font-size:12px;opacity:0.5;margin-top:4px}
-  .section{padding:32px 0;border-top:1.5px solid #0a0a0a} .section h2{font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:18px} .pink{color:#FF2E93} .blue{color:#38B6FF} .yellow{color:#FFD60A}
+  .pink{color:#FF2E93} .blue{color:#38B6FF} .yellow{color:#FFD60A}
   footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:10px;letter-spacing:2px;opacity:0.5}
-  @media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero-text h1{font-size:36px}}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero-text h1{font-size:36px}}
 </style>
 </head>
 <body>
@@ -46,35 +44,32 @@
 
 <div class="container">
   <div class="hero">
-    <a class="video" href="https://www.youtube.com/@panameramedia" target="_blank">
-      <div class="video-inner">
-        <div>LATEST ON YOUTUBE</div>
-        <h3>▶ VER SESIONES</h3>
-      </div>
-    </a>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/gDpzAbgRVvw?rel=0" title="Panamera Media - Entrevista con Martin Lagares" allowfullscreen></iframe>
+    </div>
     <div class="hero-text">
-      <div class="eyebrow">Panamera Sesiones</div>
-      <h1><span class="pink">PANAMERA</span> <span class="blue">SESIONES</span> <span class="yellow">EN VIVO</span></h1>
-      <p>Entrevistas y sesiones que celebran lo que somos.</p>
+      <div class="eyebrow">ENTREVISTA DESTACADA</div>
+      <h1><span class="pink">MARTIN</span> <span class="blue">LAGARES</span> <span class="yellow">EN VIVO</span></h1>
+      <p>Entrevistas y sesiones que celebran lo que somos. Mira la entrevista completa en YouTube.</p>
       <div class="btns">
-        <a class="btn btn-black" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">Apple Podcasts</a>
-        <a class="btn btn-white" href="https://www.youtube.com/@panameramedia" target="_blank">YouTube</a>
+        <a class="btn btn-black" href="https://youtu.be/gDpzAbgRVvw" target="_blank">▶ Ver Entrevista</a>
+        <a class="btn btn-white" href="https://www.youtube.com/@panameramedia" target="_blank">Canal</a>
       </div>
     </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px">
+  <div class="cards">
     <div class="card"><h4>Escucha</h4><a href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">Apple Podcasts <span>→</span></a></div>
-    <div class="card"><h4>Mira</h4><a href="https://www.youtube.com/@panameramedia" target="_blank">YouTube @panameramedia <span>→</span></a></div>
+    <div class="card"><h4>Mira</h4><a href="https://www.youtube.com/@panameramedia" target="_blank">YouTube <span>→</span></a></div>
     <div class="card"><h4>Sigue</h4><a href="https://www.instagram.com/panameramediaco/" target="_blank">@panameramediaco <span>→</span></a></div>
   </div>
 
   <div class="section">
     <h2><span class="pink">Últimas</span> <span class="blue">Sesiones</span></h2>
     <div class="grid">
-      <a class="story" href="https://www.youtube.com/@panameramedia" target="_blank"><div class="thumb">▶ PLAY</div><div class="body"><h4>Sesión En Vivo</h4><p>Nuevas entrevistas cada semana</p></div></a>
-      <a class="story" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div class="thumb">🎙 AUDIO</div><div class="body"><h4>Podcast Oficial</h4><p>Apple Podcasts</p></div></a>
-      <a class="story" href="https://www.instagram.com/panameramediaco/" target="_blank"><div class="thumb">📸 IG</div><div class="body"><h4>Detrás de Cámaras</h4><p>Contenido diario</p></div></a>
+      <a class="story" href="https://youtu.be/gDpzAbgRVvw" target="_blank"><div class="thumb">MARTIN LAGARES</div><div class="body"><h4>Entrevista con Martin Lagares</h4><p>Panamera Sesiones En Vivo</p></div></a>
+      <a class="story" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div class="thumb">🎙 PODCAST</div><div class="body"><h4>Panamera Sesiones</h4><p>Apple Podcasts</p></div></a>
+      <a class="story" href="https://www.youtube.com/@panameramedia" target="_blank"><div class="thumb">▶ MÁS VIDEOS</div><div class="body"><h4>Ver Todas las Sesiones</h4><p>YouTube @panameramedia</p></div></a>
     </div>
   </div>
 </div>
