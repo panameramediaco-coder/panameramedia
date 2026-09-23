@@ -7,29 +7,77 @@
 <title>PANAMERA MEDIA CO</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:#EAF4FF;color:#0a0a0a;font-family:-apple-system,BlinkMacSystemFont,"SF Pro";min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-  .wrap{max-width:480px;width:100%;text-align:center;background:white;padding:48px 32px;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.06)}
-  h1{font-size:42px;font-weight:900;letter-spacing:-2px;line-height:0.9;color:#0a0a0a}
-  .sub{margin:18px 0 32px;opacity:0.6;font-size:14px;letter-spacing:0.5px;color:#0a0a0a;line-height:1.5}
-  .links{display:flex;flex-direction:column;gap:14px}
-  .links a{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:100px;text-decoration:none;font-weight:700;font-size:15px;border:1.5px solid #0a0a0a;background:#0a0a0a;color:#fff;transition:.2s}
-  .links a:hover{transform:scale(1.02);background:#111}
-  .links a.apple{background:#0a0a0a;color:#fff}
-  .links a.light{background:#fff;color:#0a0a0a;border-color:#ddd}
-  .links a.light:hover{background:#f5f5f5}
-  .footer{margin-top:32px;font-size:11px;letter-spacing:3px;opacity:0.3;color:#0a0a0a}
+  body{font-family:-apple-system,Inter,Helvetica; background:#fff; color:#111}
+  header{position:sticky;top:0;z-index:50;background:#0a0a0a;color:#fff;border-bottom:4px solid #FF2E93}
+  .topbar{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:900;letter-spacing:-1.5px;font-size:20px;line-height:0.9}
+  .logo .pink{color:#FF2E93} .logo .blue{color:#38B6FF} .logo .yellow{color:#FFD60A}
+  .logo span.sub{display:block;font-weight:400;font-size:10px;letter-spacing:4px;opacity:0.6;margin-top:4px;color:#fff}
+  nav{display:flex;gap:28px;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+  nav a{color:#fff;text-decoration:none;opacity:0.6} nav a:hover{opacity:1}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px}
+  .hero{display:grid;grid-template-columns:1.6fr 0.8fr;gap:24px;padding:48px 0}
+  .hero-main{background:#FFF9E6;border:2px solid #FFD60A;border-radius:24px;padding:40px}
+  .eyebrow{font-size:11px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:#38B6FF;margin-bottom:16px;background:#E6F6FF;display:inline-block;padding:6px 12px;border-radius:100px}
+  .hero-main h1{font-size:56px;font-weight:900;letter-spacing:-2.5px;line-height:0.85;margin-bottom:18px}
+  .hero-main h1 .pink{color:#FF2E93} .hero-main h1 .blue{color:#38B6FF} .hero-main h1 .yellow{color:#FFD60A;-webkit-text-stroke:1.5px #111;paint-order:stroke fill}
+  .hero-main p{font-size:17px;opacity:0.7;max-width:460px;margin-bottom:28px;line-height:1.5}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:15px 24px;border-radius:100px;font-weight:800;font-size:13px;text-decoration:none;display:inline-flex;gap:8px;border:2px solid #111}
+  .btn-pink{background:#FF2E93;color:#fff;border-color:#FF2E93} .btn-blue{background:#38B6FF;color:#fff;border-color:#38B6FF} .btn-yellow{background:#FFD60A;color:#111}
+  .side{display:flex;flex-direction:column;gap:16px}
+  .card{border-radius:20px;padding:22px;border:2px solid #111}
+  .card.pink{background:#FF2E93;color:#fff;border-color:#FF2E93} .card.blue{background:#38B6FF;color:#fff;border-color:#38B6FF} .card.yellow{background:#FFD60A;color:#111}
+  .card h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.7;margin-bottom:10px;font-weight:900}
+  .card .link{font-weight:800;text-decoration:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.1)}
+  .card.pink .link, .card.blue .link{color:#fff;border-color:rgba(255,255,255,0.2)} .card.yellow .link{color:#111}
+  .section{padding:40px 0;border-top:2px solid #111}
+  .section h2{font-size:32px;font-weight:900;letter-spacing:-1.5px;margin-bottom:24px}
+  .section h2 .pink{color:#FF2E93} .section h2 .blue{color:#38B6FF} .section h2 .yellow{color:#FFD60A;-webkit-text-stroke:1px #111}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .story{border:2px solid #111;border-radius:20px;overflow:hidden;background:#fff;text-decoration:none;color:#111;transition:.15s}
+  .story:hover{transform:translateY(-4px)}
+  .thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900}
+  .thumb.pink{background:#FF2E93;color:#fff} .thumb.blue{background:#38B6FF;color:#fff} .thumb.yellow{background:#FFD60A;color:#111}
+  .body{padding:18px} .body h4{font-size:16px;font-weight:900} .body p{font-size:13px;opacity:0.6;margin-top:4px}
+  footer{background:#0a0a0a;color:#fff;padding:40px;text-align:center;margin-top:40px}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero-main h1{font-size:40px}nav{display:none}}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>PANAMERA MEDIA CO</h1>
-    <div class="sub">Buscamos el Amor al Arte en Nuestra Latinoamérica<br/>PANAMERA SESIONES</div>
-    <div class="links">
-      <a class="apple" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">🎙️ Apple Podcasts</a>
-      <a class="light" href="https://www.youtube.com/@panameramedia" target="_blank">▶️ YouTube</a>
-      <a class="light" href="https://www.instagram.com/panameramediaco/" target="_blank">📸 Instagram</a>
-    </div>
-    <div class="footer">PANAMERAMEDIA.COM</div>
+<header>
+  <div class="topbar">
+    <div class="logo"><span class="pink">PANAMERA</span> <span class="blue">MEDIA</span> <span class="yellow">CO</span><span class="sub">PANAMERAMEDIA.COM</span></div>
+    <nav><a href="/">INICIO</a><a href="https://www.youtube.com/@panameramedia" target="_blank">SESIONES</a><a href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">PODCAST</a></nav>
   </div>
+</header>
+<div class="container">
+  <div class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">EN VIVO • PANAMERA SESIONES</div>
+      <h1><span class="pink">PANAMERA</span> <span class="blue">SESIONES</span> <span class="yellow">EN VIVO</span></h1>
+      <p>Entrevistas y sesiones que celebran lo que somos. De Panamá para Latinoamérica y el mundo.</p>
+      <div class="cta">
+        <a class="btn btn-pink" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">🎙️ Apple Podcasts</a>
+        <a class="btn btn-blue" href="https://www.youtube.com/@panameramedia" target="_blank">▶️ YouTube</a>
+        <a class="btn btn-yellow" href="https://www.instagram.com/panameramediaco/" target="_blank">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="side">
+      <div class="card pink"><h3>Escucha</h3><a class="link" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank">Apple Podcasts →</a></div>
+      <div class="card blue"><h3>Mira</h3><a class="link" href="https://www.youtube.com/@panameramedia" target="_blank">YouTube @panameramedia →</a></div>
+      <div class="card yellow"><h3>Sigue</h3><a class="link" href="https://www.instagram.com/panameramediaco/" target="_blank">@panameramediaco →</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2><span class="pink">Últimas</span> <span class="blue">Sesiones</span> <span class="yellow">En Vivo</span></h2>
+    <div class="grid">
+      <a class="story" href="https://www.youtube.com/@panameramedia" target="_blank"><div class="thumb pink">▶️</div><div class="body"><h4>Panamera Sesiones</h4><p>Nuevas entrevistas cada semana.</p></div></a>
+      <a class="story" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div class="thumb blue">🎙️</div><div class="body"><h4>Podcast Oficial</h4><p>Apple Podcasts + Spotify.</p></div></a>
+      <a class="story" href="https://www.instagram.com/panameramediaco/" target="_blank"><div class="thumb yellow">📸</div><div class="body"><h4>Detrás de Cámaras</h4><p>Contenido diario en IG.</p></div></a>
+    </div>
+  </div>
+</div>
+<footer><div style="font-weight:900"><span style="color:#FF2E93">PANAMERA</span> <span style="color:#38B6FF">MEDIA</span> <span style="color:#FFD60A">CO</span></div><p style="margin-top:8px;opacity:0.4;font-size:10px;letter-spacing:3px">PANAMERAMEDIA.COM © 2026</p></footer>
 </body>
 </html>
