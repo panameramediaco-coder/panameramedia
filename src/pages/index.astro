@@ -16,10 +16,10 @@ header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z
 .links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 40px}
 .link-box{border:1.5px solid #0a0a0a;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0a0a0a;font-weight:700}
 .link-box small{display:block;font-size:10px;letter-spacing:2px;opacity:0.5;font-weight:800}
-.section-label{margin:32px 0 8px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:0.5}
+.section-label{margin:48px 0 8px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:0.5}
 .section-title{font-size:28px;font-weight:900;letter-spacing:-1.5px;line-height:0.9;margin-bottom:16px}
 .pink{color:#FF2E93}.blue{color:#38B6FF}.yellow{color:#FFD60A}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:56px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:24px}
 .card{border:1.5px solid #0a0a0a;border-radius:16px;overflow:hidden;text-decoration:none;color:#0a0a0a;display:block;background:#fff;transition:transform 0.15s}
 .card:hover{transform:translateY(-2px)}
 .card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#111}
@@ -27,7 +27,7 @@ header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z
 .card-info{padding:12px 14px}
 .card-title{font-weight:800;font-size:14px;margin-bottom:2px}
 .card-sub{font-size:12px;opacity:0.6;line-height:1.3}
-footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:10px;letter-spacing:2px;opacity:0.5;margin-top:24px}
+footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:10px;letter-spacing:2px;opacity:0.5;margin-top:48px}
 @media(max-width:700px){.links{grid-template-columns:1fr}.section-title{font-size:24px}}
 </style>
 </head>
@@ -37,14 +37,14 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
 
 <div class="container">
 
-<!-- FIXED LINKS - YOUR REAL PODCAST + YOUTUBE -->
+<!-- TOP LINKS - YOUR REAL LINKS -->
 <div class="links">
   <a class="link-box" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div><small>ESCUCHA</small>Apple Podcasts</div><div>→</div></a>
   <a class="link-box" href="https://youtube.com/@panameramedia?si=hf0mOT_ff-5h3fqb" target="_blank"><div><small>MIRA</small>YouTube</div><div>→</div></a>
   <a class="link-box" href="https://www.instagram.com/panameramediaco" target="_blank"><div><small>SIGUE</small>@panameramediaco</div><div>→</div></a>
 </div>
 
-<!-- EN CINES DE MEXICO -->
+<!-- 1. EN CINES DE MEXICO -->
 <div class="section-label">EN CINES DE MÉXICO • FESTIVAL DE VENECIA 2026 — ON THE LOOP</div>
 <div class="section-title"><span class="pink">EN CINES</span> <span class="blue">DE MÉXICO</span> <span class="yellow">— ON THE LOOP</span></div>
 <div class="grid">
@@ -57,11 +57,10 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
   </a>
 </div>
 
-<!-- HAMPTONS -->
+<!-- 2. HAMPTONS - ONLY CAPSIZED -->
 <div class="section-label">ON THE LOOP • 34TH HAMPTONS INTERNATIONAL FILM FESTIVAL</div>
 <div class="section-title"><span class="pink">HAMPTONS</span> <span class="blue">INTERNATIONAL</span> <span class="yellow">FILM FESTIVAL</span> — ON THE LOOP</div>
 <div class="grid">
-
   <a class="card" href="/capsized">
     <img src="/capsized-1.png" alt="Capsized - VONDA KAY" />
     <div class="card-info">
@@ -69,15 +68,19 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
       <div class="card-sub">34th Hamptons International Film Festival • On The Loop</div>
     </div>
   </a>
+</div>
 
+<!-- 3. SESIONES EN VIVO - MARTIN + KAT SEPARATE -->
+<div class="section-label">PANAMERA MEDIA CO — SESIONES EN VIVO</div>
+<div class="section-title"><span class="pink">SESIONES</span> <span class="blue">EN</span> <span class="yellow">VIVO</span> — ON THE LOOP</div>
+<div class="grid">
   <a class="card" href="https://www.youtube.com/watch?v=gDpzAbgRVvw" target="_blank">
-    <img src="https://img.youtube.com/vi/gDpzAbgRVvw/maxresdefault.jpg" alt="Martin Lagares, escultor español - Panamera Sesiones En Vivo" />
+    <img src="https://img.youtube.com/vi/gDpzAbgRVvw/maxresdefault.jpg" alt="Martin Lagares, escultor español" />
     <div class="card-info">
       <div class="card-title">Martin Lagares En Vivo</div>
       <div class="card-sub">Sesiones En Vivo • Watch on YouTube</div>
     </div>
   </a>
-
   <a class="card" href="#">
     <div class="card-black">KAT RIGONI</div>
     <div class="card-info">
@@ -85,7 +88,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
       <div class="card-sub">Podcast Entrevista</div>
     </div>
   </a>
-
 </div>
 
 <footer>PANAMERA MEDIA CO © 2026 — <a href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633">Apple Podcast</a> • <a href="https://youtube.com/@panameramedia?si=hf0mOT_ff-5h3fqb">YouTube</a> • <a href="https://www.instagram.com/panameramediaco">@panameramediaco</a> | <a href="https://www.instagram.com/panamera.sesiones">@panamera.sesiones</a></footer>
