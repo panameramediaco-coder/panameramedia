@@ -7,7 +7,7 @@
 <title>Panamera Media Co</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,Inter,Helvetica,Arial;background:#fff;color:#0a0a0a}
+body{font-family:-apple-system,Inter,Helvetica,Arial,sans-serif;background:#fff;color:#0a0a0a}
 .breaking{background:#0a0a0a;color:#fff;text-align:center;padding:8px 16px;font-size:10px;font-weight:800;letter-spacing:2px}
 header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z-index:10}
 .topbar{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
@@ -23,27 +23,96 @@ header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z
 .card{border:1.5px solid #0a0a0a;border-radius:16px;overflow:hidden;text-decoration:none;color:#0a0a0a;display:block;background:#fff;transition:transform 0.15s}
 .card:hover{transform:translateY(-2px)}
 .card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#111}
-.card-black{background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;letter-spacing:1px;aspect-ratio:16/10}
+.card-black{background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;letter-spacing:1px;aspect-ratio:16/10;text-align:center;padding:16px}
 .card-info{padding:12px 14px}
 .card-title{font-weight:800;font-size:14px;margin-bottom:2px}
 .card-sub{font-size:12px;opacity:0.6;line-height:1.3}
 .badge{display:inline-block;background:#FF2E93;color:#fff;font-size:9px;font-weight:900;letter-spacing:1.5px;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+.hero-slider{position:relative;border:1.5px solid #0a0a0a;border-radius:16px;overflow:hidden;background:#0a0a0a;aspect-ratio:16/7;min-height:420px;margin-bottom:40px}
+.slides{position:relative;width:100%;height:100%}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease;display:grid;grid-template-columns:1.15fr 0.85fr;pointer-events:none}
+.slide.active{opacity:1;pointer-events:auto}
+.slide-media{position:relative;overflow:hidden;background:#111}
+.slide-media img{width:100%;height:100%;object-fit:cover;display:block}
+.slide-label{position:absolute;bottom:12px;left:12px;right:12px;background:#0a0a0a;color:#fff;font-size:7px;font-weight:800;letter-spacing:1px;padding:6px 8px;border-radius:6px;display:flex;justify-content:space-between}
+.slide-content{background:#fff;padding:28px 24px;display:flex;flex-direction:column;justify-content:center}
+.slide-content .k{font-size:7px;font-weight:900;letter-spacing:1.5px;margin-bottom:8px;display:inline-block;background:#0a0a0a;color:#fff;padding:4px 8px;border-radius:999px}
+.slide-content .k.pink{background:#FF2E93}.slide-content .k.blue{background:#38B6FF}.slide-content .k.yellow{background:#FFD60A;color:#0a0a0a}
+.slide-content h2{font-size:32px;font-weight:900;letter-spacing:-1.2px;line-height:0.9;margin-bottom:8px;text-transform:uppercase}
+.slide-content p{font-size:11px;line-height:1.4;font-weight:600;opacity:0.7;margin-bottom:12px}
+.slide-content .btn{display:inline-flex;background:#0a0a0a;color:#fff;border-radius:999px;padding:8px 14px;font-size:9px;font-weight:900;letter-spacing:1px;width:fit-content;text-decoration:none}
+.dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+.dot{width:22px;height:4px;border-radius:999px;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s}
+.dot.active{background:#fff;width:28px}
+.article-wrap{border:1.5px solid #0a0a0a;border-radius:16px;padding:32px 28px;margin-top:24px;max-width:780px;background:#fff}
+.article-wrap h1{font-size:36px;font-weight:900;letter-spacing:-1.5px;line-height:0.9;margin-bottom:8px}
+.article-wrap h2{font-size:18px;font-weight:400;font-style:italic;opacity:0.7;margin-bottom:20px;line-height:1.3}
+.article-meta{font-size:10px;font-weight:800;letter-spacing:2px;opacity:0.5;margin-bottom:24px;text-transform:uppercase}
+.article-body{font-size:16px;line-height:1.75;opacity:0.9}
+.article-body p{margin-bottom:18px}
+.article-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}
+.article-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1.5px solid #0a0a0a;display:block}
 footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:10px;letter-spacing:2px;margin-top:48px}
-@media(max-width:700px){.links{grid-template-columns:1fr}.section-title{font-size:24px}}
+@media(max-width:900px){.slide{grid-template-columns:1fr}.slide-content{padding:18px}.slide-content h2{font-size:24px}.hero-slider{aspect-ratio:auto;min-height:540px}.links{grid-template-columns:1fr}.section-title{font-size:24px}.article-gallery{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="breaking">PANAMERA MEDIA CO • EL PANAMERA 2026</div>
 <header><div class="topbar"><a class="logo" href="/">PANAMERA MEDIA CO</a><a href="/contact" style="font-size:10px;letter-spacing:2px;font-weight:900;text-decoration:none;color:#fff;background:#0a0a0a;border-radius:999px;padding:8px 14px">CONTACT →</a></div></header>
-
 <div class="container">
-
 <div class="links">
   <a class="link-box" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div><small>ESCUCHA</small>Apple Podcasts</div><div>→</div></a>
   <a class="link-box" href="https://youtube.com/@panameramedia?si=hf0mOT_ff-5h3fqb" target="_blank"><div><small>MIRA</small>YouTube</div><div>→</div></a>
   <a class="link-box" href="https://www.instagram.com/panameramediaco" target="_blank"><div><small>SIGUE</small>@panameramediaco</div><div>→</div></a>
 </div>
-
+<!-- 4-SECOND SLIDER WITH EVERYTHING - SILVANA FIRST - ALL PICTURES -->
+<div class="hero-slider" id="heroSlider">
+  <div class="slides">
+    <div class="slide active">
+      <div class="slide-media"><img src="/silvana-1.png" alt="【entity-Silvana Estrada¦canonical_name=SILVANA ESTRADA】" /><div class="slide-label"><span>【entity-SILVANA ESTRADA¦canonical_name=SILVANA ESTRADA】 • BITÁCORA • ENSAYO MUSICAL</span><span>SLIDE 01</span></div></div>
+      <div class="slide-content"><div class="k pink">SLIDE 01 • BITÁCORA</div><h2>SILVANA<br/>ESTRADA</h2><p>La canción como casa. Ensayo íntimo sobre voz, noche y pertenencia.</p><a href="#silvana-estrada" class="btn">LEER ENSAYO →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="/hombre-al-agua-1.png" alt="Hombre al Agua" /><div class="slide-label"><span>HOMBRE AL AGUA • VENECIA 2026</span><span>【entity-GAEL GARCÍA BERNAL¦canonical_name=GAEL GARCÍA BERNAL】</span></div></div>
+      <div class="slide-content"><div class="k">VENECIA 2026</div><h2>EN CINES<br/>DE MÉXICO</h2><p>La nueva película de Gabriela Lara — memoria, mar y pérdida. Estreno nacional 14 noviembre.</p><a href="/hombre-al-agua" class="btn">VER TRÁILER →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="/capsized-1.png" alt="Capsized" /><div class="slide-label"><span>CAPSIZED • HAMPTONS 2026</span><span>OFFICIAL SELECTION</span></div></div>
+      <div class="slide-content"><div class="k">HAMPTONS FESTIVAL</div><h2>CAPSIZED</h2><p>34th Hamptons International Film Festival — Film Coverage.</p><a href="/capsized" class="btn">VER →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="/the-grid-unplugged-poster.png" alt="The Grid Unplugged" /><div class="slide-label"><span>THE GRID UNPLUGGED • WORLD PREMIERE</span><span>DOCUMENTARY</span></div></div>
+      <div class="slide-content"><div class="k blue">DOCUMENTARY</div><h2>THE GRID<br/>UNPLUGGED</h2><p>World premiere at Hamptons — Film Coverage.</p><a href="/the-grid-unplugged" class="btn">VER →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="/romantico_img_p1_1.png" alt="Romántico - Alex Eugenio" /><div class="slide-label"><span>ROMÁNTICO • BOLERO PUNK</span><span>EP OUT NOW</span></div></div>
+      <div class="slide-content"><div class="k pink">NEW MUSIC</div><h2>ROMÁNTICO<br/>ALEX EUGENIO</h2><p>Bolero punk — Candelario EP • Escrutinio out now • El Romántico de la Perla.</p><a href="/romantico" class="btn">ESCUCHAR →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="https://img.youtube.com/vi/cWgfwy2hAO4/hqdefault.jpg" alt="Anthony Ippolito" /><div class="slide-label"><span>ANTHONY IPPOLITO • I PLAY ROCKY</span><span>BREAKTHROUGH PERFORMER AWARD</span></div></div>
+      <div class="slide-content"><div class="k pink">INTERVIEW</div><h2>ANTHONY<br/>IPPOLITO</h2><p>I Play Rocky — Breakthrough Performer Award. Hamptons 2026.</p><a href="https://youtu.be/cWgfwy2hAO4" target="_blank" class="btn">VER ENTREVISTA →</a></div>
+    </div>
+    <div class="slide">
+      <div class="slide-media"><img src="https://img.youtube.com/vi/gDpzAbgRVvw/maxresdefault.jpg" alt="Martin Lagares" /><div class="slide-label"><span>MARTIN LAGARES • SESIONES EN VIVO</span><span>LIVE SESSION</span></div></div>
+      <div class="slide-content"><div class="k">SESIONES EN VIVO</div><h2>MARTIN<br/>LAGARES</h2><p>En vivo — Sesiones en vivo. Watch on YouTube.</p><a href="https://www.youtube.com/watch?v=gDpzAbgRVvw" target="_blank" class="btn">VER SESIÓN →</a></div>
+    </div>
+  </div>
+  <div class="dots" id="dots"></div>
+</div>
+<div id="silvana-estrada" class="article-wrap">
+  <h1>【entity-Silvana Estrada¦canonical_name=SILVANA ESTRADA】</h1>
+  <h2>La canción como casa</h2>
+  <div class="article-meta">Por Panamera Media Co • 2026 • Ensayo Musical • 3 Fotos</div>
+  <div class="article-gallery">
+    <img src="/silvana-1.png" alt="【entity-Silvana Estrada¦canonical_name=SILVANA ESTRADA】 1" />
+    <img src="/silvana-2.png" alt="【entity-Silvana Estrada¦canonical_name=SILVANA ESTRADA】 2" />
+    <img src="/silvana-3.png" alt="【entity-Silvana Estrada¦canonical_name=SILVANA ESTRADA】 3" />
+  </div>
+  <div class="article-body">
+    <p><strong>ESPACIO RESERVADO PARA TU ARTÍCULO DE SILVANA ESTRADA.</strong></p>
+    <p>Cuando tengas tu texto listo, aquí va tu big story — slide uno, solo ella. Tus 3 fotos ya están en public/.</p>
+  </div>
+</div>
 <div class="section-label">EN CINES DE MÉXICO • FESTIVAL DE VENECIA 2026</div>
 <div class="section-title"><span class="pink">EN CINES</span> <span class="blue">DE MÉXICO</span></div>
 <div class="grid">
@@ -51,11 +120,10 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     <img src="/hombre-al-agua-1.png" alt="Hombre al Agua" />
     <div class="card-info">
       <div class="card-title">Hombre al Agua — Film Coverage</div>
-      <div class="card-sub">Venecia 2026 • Gael García Bernal</div>
+      <div class="card-sub">Venecia 2026 • 【entity-Gael García Bernal¦canonical_name=GAEL GARCÍA BERNAL】</div>
     </div>
   </a>
 </div>
-
 <div class="section-label">34TH HAMPTONS INTERNATIONAL FILM FESTIVAL</div>
 <div class="section-title"><span class="pink">HAMPTONS</span> <span class="blue">INTERNATIONAL</span> <span class="yellow">FILM FESTIVAL</span></div>
 <div class="grid">
@@ -67,7 +135,7 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
   <a class="card" href="/the-grid-unplugged" style="border-color:#38B6FF">
-    <img src="/the-grid-unplugged-poster.png" alt="The Grid Unplugged" style="object-fit:cover !important; object-position:center top !important; padding:0 !important; background:#111 !important; aspect-ratio:16/10 !important;" />
+    <img src="/the-grid-unplugged-poster.png" alt="The Grid Unplugged" />
     <div class="card-info">
       <div><span class="badge" style="background:#38B6FF">NEW • DOCUMENTARY</span></div>
       <div class="card-title">The Grid Unplugged — Film Coverage</div>
@@ -83,7 +151,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <div class="section-label">PANAMERA MEDIA CO — NEW MUSIC / NUEVA MÚSICA</div>
 <div class="section-title"><span class="pink">NEW</span> <span class="blue">MUSIC</span> <span class="yellow">NEW ARTISTS</span></div>
 <div class="grid">
@@ -96,7 +163,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <div class="section-label">PANAMERA MEDIA CO — SESIONES EN VIVO</div>
 <div class="section-title"><span class="pink">SESIONES</span> <span class="blue">EN</span> <span class="yellow">VIVO</span></div>
 <div class="grid">
@@ -115,7 +181,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <footer style="border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;margin-top:48px">
   <div style="margin-bottom:16px">
     <a href="/contact" style="display:inline-flex;border:1.5px solid #0a0a0a;border-radius:999px;padding:10px 18px;text-decoration:none;color:#0a0a0a;font-weight:800;font-size:11px;letter-spacing:1px">BOOKING / SERVICES → Javier@panameramedia.com</a>
@@ -123,5 +188,33 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
   <div style="font-size:10px;letter-spacing:2px;opacity:0.5">PANAMERA MEDIA CO © 2026 — <a href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633">Apple Podcast</a> • <a href="https://youtube.com/@panameramedia?si=hf0mOT_ff-5h3fqb">YouTube</a> • <a href="https://www.instagram.com/panameramediaco">@panameramediaco</a> • <a href="/contact" style="font-weight:800">CONTACT</a></div>
 </footer>
 </div>
+<script>
+(function(){
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('dots');
+  let current = 0;
+  let timer;
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  });
+  const dots = document.querySelectorAll('.dot');
+  function goTo(n){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    resetTimer();
+  }
+  function next(){ goTo((current + 1) % slides.length); }
+  function resetTimer(){ clearInterval(timer); timer = setInterval(next, 4000); }
+  resetTimer();
+  document.getElementById('heroSlider').addEventListener('mouseenter', () => clearInterval(timer));
+  document.getElementById('heroSlider').addEventListener('mouseleave', resetTimer);
+})();
+</script>
 </body>
 </html>
