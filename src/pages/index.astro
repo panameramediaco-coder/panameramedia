@@ -7,7 +7,7 @@
 <title>Panamera Media Co</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,Inter,Helvetica,Arial;background:#fff;color:#0a0a0a}
+body{font-family:-apple-system,Inter,Helvetica,Arial,sans-serif;background:#fff;color:#0a0a0a}
 .breaking{background:#0a0a0a;color:#fff;text-align:center;padding:8px 16px;font-size:10px;font-weight:800;letter-spacing:2px}
 header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z-index:10}
 .topbar{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
@@ -28,22 +28,38 @@ header{border-bottom:1.5px solid #0a0a0a;position:sticky;top:0;background:#fff;z
 .card-title{font-weight:800;font-size:14px;margin-bottom:2px}
 .card-sub{font-size:12px;opacity:0.6;line-height:1.3}
 .badge{display:inline-block;background:#FF2E93;color:#fff;font-size:9px;font-weight:900;letter-spacing:1.5px;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+.feature-link{border:1.5px solid #0a0a0a;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1.15fr 0.85fr;margin-bottom:40px;text-decoration:none;color:#0a0a0a;background:#fff;min-height:360px}
+.feature-link .img{position:relative;background:#111;overflow:hidden}
+.feature-link .img img{width:100%;height:100%;object-fit:cover;display:block}
+.feature-link .text{padding:24px 20px;display:flex;flex-direction:column;justify-content:center}
+.feature-link .k{font-size:8px;font-weight:900;letter-spacing:1.5px;background:#FF2E93;color:#fff;padding:5px 10px;border-radius:999px;width:fit-content;margin-bottom:10px}
+.feature-link h2{font-size:30px;font-weight:900;letter-spacing:-1.2px;line-height:0.88;margin-bottom:8px;text-transform:uppercase}
+.feature-link p{font-size:11px;opacity:0.7;line-height:1.4;margin-bottom:12px}
+.feature-link .btn{background:#0a0a0a;color:#fff;border-radius:999px;padding:8px 14px;font-size:9px;font-weight:900;letter-spacing:1px;width:fit-content}
 footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:10px;letter-spacing:2px;margin-top:48px}
-@media(max-width:700px){.links{grid-template-columns:1fr}.section-title{font-size:24px}}
+@media(max-width:700px){.feature-link{grid-template-columns:1fr}.links{grid-template-columns:1fr}.section-title{font-size:24px}}
 </style>
 </head>
 <body>
 <div class="breaking">PANAMERA MEDIA CO • EL PANAMERA 2026</div>
 <header><div class="topbar"><a class="logo" href="/">PANAMERA MEDIA CO</a><a href="/contact" style="font-size:10px;letter-spacing:2px;font-weight:900;text-decoration:none;color:#fff;background:#0a0a0a;border-radius:999px;padding:8px 14px">CONTACT →</a></div></header>
-
 <div class="container">
-
 <div class="links">
   <a class="link-box" href="https://podcasts.apple.com/us/podcast/panamera-sesiones/id6790205633" target="_blank"><div><small>ESCUCHA</small>Apple Podcasts</div><div>→</div></a>
   <a class="link-box" href="https://youtube.com/@panameramedia?si=hf0mOT_ff-5h3fqb" target="_blank"><div><small>MIRA</small>YouTube</div><div>→</div></a>
   <a class="link-box" href="https://www.instagram.com/panameramediaco" target="_blank"><div><small>SIGUE</small>@panameramediaco</div><div>→</div></a>
 </div>
-
+<a class="feature-link" href="/silvana-estrada">
+  <div class="img">
+    <img src="/silvana-2.png" alt="Silvana Estrada" />
+  </div>
+  <div class="text">
+    <div class="k">BITACORA</div>
+    <h2>SILVANA<br/>ESTRADA</h2>
+    <p>La nueva voz de México no grita, susurra al alma. Veracruzana, 1997. Afinadora de silencios.</p>
+    <div class="btn">LEER →</div>
+  </div>
+</a>
 <div class="section-label">EN CINES DE MÉXICO • FESTIVAL DE VENECIA 2026</div>
 <div class="section-title"><span class="pink">EN CINES</span> <span class="blue">DE MÉXICO</span></div>
 <div class="grid">
@@ -55,7 +71,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <div class="section-label">34TH HAMPTONS INTERNATIONAL FILM FESTIVAL</div>
 <div class="section-title"><span class="pink">HAMPTONS</span> <span class="blue">INTERNATIONAL</span> <span class="yellow">FILM FESTIVAL</span></div>
 <div class="grid">
@@ -83,7 +98,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <div class="section-label">PANAMERA MEDIA CO — NEW MUSIC / NUEVA MÚSICA</div>
 <div class="section-title"><span class="pink">NEW</span> <span class="blue">MUSIC</span> <span class="yellow">NEW ARTISTS</span></div>
 <div class="grid">
@@ -96,7 +110,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <div class="section-label">PANAMERA MEDIA CO — SESIONES EN VIVO</div>
 <div class="section-title"><span class="pink">SESIONES</span> <span class="blue">EN</span> <span class="yellow">VIVO</span></div>
 <div class="grid">
@@ -115,7 +128,6 @@ footer{border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;font-size:1
     </div>
   </a>
 </div>
-
 <footer style="border-top:1.5px solid #0a0a0a;padding:24px;text-align:center;margin-top:48px">
   <div style="margin-bottom:16px">
     <a href="/contact" style="display:inline-flex;border:1.5px solid #0a0a0a;border-radius:999px;padding:10px 18px;text-decoration:none;color:#0a0a0a;font-weight:800;font-size:11px;letter-spacing:1px">BOOKING / SERVICES → Javier@panameramedia.com</a>
